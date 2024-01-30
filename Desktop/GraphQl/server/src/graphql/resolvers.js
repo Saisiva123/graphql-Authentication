@@ -22,7 +22,6 @@ export const resolvers = {
                 username, email: email.toLowerCase(), password: encryptedPassword
             })
             const res = await newUser.save()
-            console.log(res)
             return {
                 id: res._id,
                 username: res.username,

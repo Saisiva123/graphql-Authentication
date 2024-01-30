@@ -1,0 +1,17 @@
+version : '3'
+services:
+  mongo_db:
+      image: mongo 
+      volumes:
+        - ./data/db:/data/db 
+      ports:
+        - 27017:27017
+  express-app:
+    build:
+      context: .
+    ports:
+      - 4000:4000  
+    depends_on: 
+      - mongo_db
+
+
